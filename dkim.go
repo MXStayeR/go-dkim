@@ -111,9 +111,19 @@ func Sign(email *[]byte, options SigOptions) error {
 	}
 	key, err := x509.ParsePKCS1PrivateKey(d.Bytes)
 	if err != nil {
-		return ErrCandNotParsePrivateKey
+		k, err := x509.ParsePKCS8PrivateKey(d.Bytes)
+		if err != nil {
+			return ErrCandNotParsePrivateKey
+		}
+		key, ok := k.(*rsa.PrivateKey)
+		if !ok {
+			return ErrPrivateKeyBlockIsNotRSA
+		}
+		privateKey = key
+		
+	} else {
+		privateKey = key
 	}
-	privateKey = key
 
 	// Domain required
 	if options.Domain == "" {
