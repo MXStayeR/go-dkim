@@ -22,6 +22,9 @@ var (
 
 	// ErrCandNotParsePrivateKey when unable to parse private key
 	ErrCandNotParsePrivateKey = errors.New("can not parse private key, check format (pem) and validity")
+	
+	// ErrPrivateKeyBlockIsNotRSA when unable to parse private key block for PKCS8
+	ErrPrivateKeyBlockIsNotRSA = errors.New("private key block is not of type RSA")
 
 	// ErrSignBadAlgo Bad algorithm
 	ErrSignBadAlgo = errors.New("bad algorithm. Only rsa-sha1 or rsa-sha256 are permitted")
