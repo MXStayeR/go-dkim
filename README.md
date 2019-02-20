@@ -1,5 +1,5 @@
 # go-dkim
-DKIM package for Golang
+DKIM package for Golang - fork of https://github.com/toorop/go-dkim
 
 [![GoDoc](https://godoc.org/github.com/toorop/go-dkim?status.svg)](https://godoc.org/github.com/toorop/go-dkim)
 
@@ -7,7 +7,7 @@ DKIM package for Golang
 
 ### Install
 ```
- 	go get github.com/toorop/go-dkim
+ 	go get github.com/MXStayeR/go-dkim
 ```
 Warning: you need to use Go 1.4.2-master or 1.4.3 (when it will be available)
 see https://github.com/golang/go/issues/10482 fro more info.
@@ -16,7 +16,7 @@ see https://github.com/golang/go/issues/10482 fro more info.
 
 ```go
 import (
-	dkim "github.com/toorop/go-dkim"
+	dkim "github.com/MXStayeR/go-dkim"
 )
 
 func main(){
